@@ -1,67 +1,116 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Maxamad Cade Youth Union</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCYU Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f1a40, #2e2eff);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }.signup-container {
+  background: #fff;
+  border-radius: 30px;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 400px;
+  color: #111;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2e2eff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 50px;
+  background-color: #f2f4ff;
+  font-size: 16px;
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #888;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.checkbox input {
+  margin-right: 8px;
+}
+
+.signup-btn {
+  width: 100%;
+  background: linear-gradient(to right, #2e2eff, #6a6aff);
+  border: none;
+  padding: 14px;
+  color: white;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signin-link a {
+  color: #2e2eff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="logo.png" alt="MCYU Logo" class="logo">
-        <h1>Maxamad Cade Youth Union - Registration</h1>
-        <form id="registrationForm">
-            <label for="fullName">Full Name:</label>
-            <input type="text" id="fullName" required>
-
-            <label for="motherName">Mother's Name:</label>
-            <input type="text" id="motherName" required>
-
-            <label for="age">Age:</label>
-            <input type="number" id="age" required>
-
-            <label for="location">Current Location:</label>
-            <input type="text" id="location" required>
-
-            <label for="clanBranch">Which son of Maxamad Cade do you belong to?</label>
-            <select id="clanBranch" required>
-                <option value="">--Choose--</option>
-                <option value="Cali Gaduud">Cali Gaduud</option>
-                <option value="Muuse Cade">Muuse Cade</option>
-                <option value="Xasan">Xasan</option>
-                <option value="Axmad Dheer">Axmad Dheer</option>
-                <option value="Adan">Adan</option>
-                <option value="Isman">Isman</option>
-            </select>
-
-            <label for="educationLevel">Education Level:</label>
-            <select id="educationLevel" required>
-                <option value="">--Choose--</option>
-                <option value="In School">In School</option>
-                <option value="In University">In University</option>
-                <option value="Graduated">Graduated</option>
-            </select>
-
-            <label for="degree">If graduated, specify Bachelor or Master degree:</label>
-            <input type="text" id="degree">
-
-            <label for="occupation">Occupation:</label>
-            <input type="text" id="occupation">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" required>
-
-            <button type="submit">Submit</button>
-        </form>
-
-        <div id="memberList" style="display:none;">
-            <h2>Registered Members</h2>
-            <ul id="memberDisplay"></ul>
-        </div>
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+    <form id="registrationForm">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" required />
+        <label>I read and agree to Terms & Conditions</label>
+      </div>
+      <button type="submit" class="signup-btn">Create Account</button>
+    </form>
+    <div class="signin-link">
+      Already have an account? <a href="#">Sign in</a>
     </div>
-    <script src="script.js"></script>
-</body>
+  </div>  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Account Created! Your data will be sent and saved (Google Sheets/Backend). TODO: Integrate backend.");
+    });
+  </script></body>
 </html>
